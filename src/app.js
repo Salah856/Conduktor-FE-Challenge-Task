@@ -25,7 +25,6 @@ const App = () => {
         <Switch>
           <Route path="/" exact component={Home} />
           <ProtectedRoute path="/profile" component={Profile} />
-          {/* <ProtectedRoute path="/external-api" component={ExternalApi} /> */}
           <ProtectedRoute path="/topics-create" component={CreateTopic}/>
         </Switch>
       </div>
