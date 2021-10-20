@@ -5,14 +5,28 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { NavBar, Footer, Loading } from "./components";
 import { Home, Profile, CreateTopic } from "./views";
 import ProtectedRoute from "./auth/protected-route";
+import bc from '../src/utils/broadCastChannel'; 
 
 import "./app.css";
 
 const App = () => {
 
-  window.title= "Conduktor FE Task"; 
+  window.title= "Conduktor FE Task";
+  
+  const { isLoading, logout } = useAuth0();
+  
+  bc.onmessage = (ev) => {
+    if(ev.message == 'logout'){
+      // handling lougout using auth0 
+      logout({
+        returnTo: window.location.origin,
+      })
+    }
 
-  const { isLoading } = useAuth0();
+    // so on 
+
+  }; 
+
 
   if (isLoading) {
     return <Loading />;
