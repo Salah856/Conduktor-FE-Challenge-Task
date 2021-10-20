@@ -22,7 +22,7 @@ import React, {
   import FileCopyIcon from '@material-ui/icons/FileCopy';
   import MoreIcon from '@material-ui/icons/MoreVert';
   
-  import bytesToSize from 'src/utils/bytesToSize';
+  import bytesToSize from '../utils/bytesToSize';
   
   const useStyles = makeStyles((theme) => ({
     root: {},
@@ -96,7 +96,7 @@ import React, {
             <img
               alt="Select file"
               className={classes.image}
-              src="/static/images/undraw_add_file2_gvbb.svg"
+              src="https://thumbs.dreamstime.com/z/multiple-file-document-icon-logo-design-element-multiple-file-document-icon-logo-design-element-white-background-122728126.jpg"
             />
           </div>
           <div>

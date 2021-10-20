@@ -5,7 +5,6 @@ import clsx from 'clsx';
 
 import * as Yup from 'yup';
 import { Formik } from 'formik';
-import { useSnackbar } from 'notistack';
 
 import {
   Box, Button,
@@ -15,7 +14,7 @@ import {
   TextField, makeStyles
 } from '@material-ui/core';
 
-import FilesDropzone from 'src/components/FilesDropzone';
+import FilesDropzone from '../components/FilesDropzone';
 
 const useStyles = makeStyles(() => ({
   root: {},
@@ -25,7 +24,6 @@ const CreateTopic = ({ className, ...rest }) => {
   
     const classes = useStyles();
     const history = useHistory();
-    const { enqueueSnackbar } = useSnackbar();
 
     return (
     <Formik
@@ -49,9 +47,7 @@ const CreateTopic = ({ className, ...rest }) => {
 
           setStatus({ success: true });
           setSubmitting(false);
-          enqueueSnackbar('Product Created', {
-            variant: 'success'
-          });
+
           history.push('/');
         } catch (err) {
           console.error(err);
@@ -126,7 +122,7 @@ const CreateTopic = ({ className, ...rest }) => {
               type="submit"
               disabled={isSubmitting}
             >
-              Create product
+              Create Topic
             </Button>
           </Box>
         </form>
@@ -135,7 +131,7 @@ const CreateTopic = ({ className, ...rest }) => {
   );
 };
 
-ProductCreateForm.propTypes = {
+CreateTopic.propTypes = {
   className: PropTypes.string
 };
 
