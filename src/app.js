@@ -15,16 +15,16 @@ const App = () => {
   
   const { isLoading, logout } = useAuth0();
   
-  bc.onmessage = (ev) => {
-    if(ev.message == 'logout'){
+  bc.onmessage = (message) => {
+    if(message.data == 'logout'){
       // handling lougout using auth0 
       logout({
         returnTo: window.location.origin,
       })
     }
 
-    // so on 
-
+    // so on in other events, mostly same approach!
+    
   }; 
 
 
